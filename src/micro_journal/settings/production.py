@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6e5i$td5d7o5yajfsasio3dg5g6gx#js*_lvzs&#)i%v6q2#$io519'
+SECRET_KEY = '6e5i$td5d7o5yajfsasio3dg5g6gx#js*_lvzs&#)i%v6q2#$io519'  # TODO to be edited for production
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -75,8 +75,8 @@ WSGI_APPLICATION = 'micro_journal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'microj',
     }
 }
 
