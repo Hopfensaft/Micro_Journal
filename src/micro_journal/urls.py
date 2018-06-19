@@ -23,6 +23,7 @@ from journal_entries.views import FrontendRenderView, journal_entry_view
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contact/$', TemplateView.as_view(template_name="contact.html")),
+    url(r'^$', TemplateView.as_view(template_name='main.html')),
 ]
 
 urlpatterns += [url(r'^(?P<path>.*)', FrontendRenderView.as_view(), name='home')]
