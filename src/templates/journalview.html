@@ -1,15 +1,18 @@
 <!DOCTYPE html>
+
+import React from 'react';
+import { Button, Card, CardBody, CardImage, CardTitle, CardText } from 'mdbreact';
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
     Well, hello
     <ul>
         {% for object in object_list%}
-        <li>{{ object }}</li>
+        <li>{{ object.created_timestamp }}</li>
         {% endfor %}
     </ul>
 </html>

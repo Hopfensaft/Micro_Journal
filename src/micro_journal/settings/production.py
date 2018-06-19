@@ -14,6 +14,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+STATICFILE_DIRS = [
+    os.path.join(BASE_DIR, 'journal_entries/static'),
+]
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'journal_entries',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +73,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'micro_journal.wsgi.application'
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/local/',  # end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-local.json'),
+    }
+}
 
 
 # Database
