@@ -5,6 +5,11 @@ module.exports = {
   context: __dirname,
 
   entry: {
+      'app': [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      './src/index'
+    ],
     // Add as many entry points as you have container-react-components here
     App: './micro_journal/templates/App',
     vendors: ['react'],
@@ -23,6 +28,10 @@ module.exports = {
   ], // add all common plugins here
 
   module: {
+      rules:[{
+            test:/\.css$/,
+            use:['style-loader','css-loader']
+        }],
     loaders: [] // add all common loaders here
   },
 

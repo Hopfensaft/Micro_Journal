@@ -26,4 +26,4 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='main.html')),
 ]
 
-urlpatterns += [url(r'^(?P<path>.*)', FrontendRenderView.as_view(), name='home')]
+urlpatterns += [url(r'^(?P<path>.*)', FrontendRenderView.as_view(), name='main.html')]
