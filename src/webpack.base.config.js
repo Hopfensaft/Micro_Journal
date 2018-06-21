@@ -8,10 +8,10 @@ module.exports = {
       'app': [
       'babel-polyfill',
       'react-hot-loader/patch',
-      './src/index'
+      './templates/App'
     ],
     // Add as many entry points as you have container-react-components here
-    App: './micro_journal/templates/App',
+    App: './templates/App',
     vendors: ['react'],
   },
 
@@ -25,13 +25,10 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
+
   ], // add all common plugins here
 
   module: {
-      rules:[{
-            test:/\.css$/,
-            use:['style-loader','css-loader']
-        }],
     loaders: [] // add all common loaders here
   },
 
