@@ -4,6 +4,10 @@
 /program_files/frontend/node_modules
 /program_files/frontend/build
 
+/program_files/frontend/package-lock.json
+/program_files/backend/package-lock.json
+
+/program_files/backend/static
 
 # misc
 .DS_Store
