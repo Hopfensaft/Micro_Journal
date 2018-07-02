@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'django_mongoengine',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,16 @@ DATABASES = {
     }
 }
 
+MONGODB_DATABASES = {
+    "default": {
+        "name": "microj",
+        "host": ALLOWED_HOSTS,
+        "tz_aware": True,  # if you using timezones in django (USE_TZ = True)
+    },
+}
+
+SESSION_ENGINE = 'django_mongoengine.sessions'
+SESSION_SERIALIZER = 'django_mongoengine.sessions.BSONSerializer'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

@@ -16,3 +16,6 @@ class JournalEntry(Document):
     activities = DictField(required=False)
     goals = ListField(required=False)
     meta = {'collection': 'JournalEntries'}
+
+    def __str__(self):
+        return self._id
