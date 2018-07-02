@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+export { Header, Footer };
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
