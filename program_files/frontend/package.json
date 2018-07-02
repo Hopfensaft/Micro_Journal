@@ -1,8 +1,12 @@
 {
-  "name": "frontend",
+  "name": "micro_journal_frontend",
   "version": "0.1.0",
   "private": true,
+  "main": "frontend/index.js",
   "dependencies": {
+    "@material-ui/core": "1.2.2",
+    "@material-ui/icons": "1.1.0",
+    "material-ui": "1.0.0-beta.47",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",

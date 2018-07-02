@@ -1,6 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# dependencies
 /program_files/frontend/node_modules
 /program_files/frontend/build
 
