@@ -11,6 +11,8 @@ from rest_auth.views import LogoutView
 from mongoengine import *
 from django_mongoengine import Document, EmbeddedDocument, fields
 
+from django.shortcuts import render, redirect
+
 
 connect("microj")
 
@@ -41,6 +43,8 @@ catchall_prod = TemplateView.as_view(template_name="index.html")
 
 catchall = catchall_dev if settings.DEBUG else catchall_prod
 
+def home(request):
+    return render(request, 'sessions.html', {'demo_title': 'Wello world', 'name': 'melardev'})
 
 class TestAuthView(APIView):
     authentication_classes = (authentication.TokenAuthentication,)

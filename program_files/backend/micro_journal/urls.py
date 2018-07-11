@@ -16,13 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, re_path
-from .views import TestAuthView, LogoutViewEx
+from .views import TestAuthView, LogoutViewEx, home
 from rest_auth.views import LoginView
 from . import views
 
+from .sessions import session_demo
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'test_auth/', TestAuthView.as_view(), name='test_auth', ),
+    url(r'test_auth/', session_demo, name='home', ),
     url(r'rest-auth/logout/', LogoutViewEx.as_view(), name='rest_logout', ),
     url(r'rest-auth/login/', LoginView.as_view(), name='rest_login', ),
     re_path(r'', views.catchall),
