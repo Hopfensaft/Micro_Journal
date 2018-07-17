@@ -78,12 +78,6 @@ WSGI_APPLICATION = 'micro_journal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'microj',
-    }
-}
 
 MONGODB_DATABASES = {
     "default": {

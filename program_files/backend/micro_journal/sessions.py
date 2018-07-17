@@ -1,7 +1,7 @@
 from django import forms
 from django.shortcuts import render, redirect
 from mongoengine import *
-from pymongo import MongoClient
+from django.contrib import auth
 
 
 class FormLogin(forms.Form):
@@ -10,8 +10,6 @@ class FormLogin(forms.Form):
 
 
 def session_demo(request):
-    client = MongoClient()
-    db = client.microj
     username = None  # default value
     form_login = FormLogin()
     if request.method == 'GET':
@@ -34,9 +32,18 @@ def session_demo(request):
         if form_login.is_valid():
             username = form_login.cleaned_data['username']
             password = form_login.cleaned_data['password']
+
+            """ # was only used for auth testing
             valid_usernames = [user["username"] for user in db.auth_user.find()]
             if username.strip() in valid_usernames and password.strip() == 'secret':
                 request.session['username'] = username
+            else:
+                username = None
+                
+            """
+            user = auth.authenticate(username=username, password=password)
+            if user is not None:
+                request.session["username"] = username
             else:
                 username = None
 
