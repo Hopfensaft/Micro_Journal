@@ -1,3 +1,5 @@
+UPDATE: Considering putting a halt on this as backend is causing some trouble and needs lots of work. Redo simpler?
+
 Buildscript for production deployment:
 
 cd frontend
